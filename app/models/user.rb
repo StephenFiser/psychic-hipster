@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :memberships
+  has_many :cars
   attr_accessible :first_name, :last_name
   scope :ordered, order("last_name")
 
@@ -9,5 +10,9 @@ class User < ActiveRecord::Base
 
   def active_memberships
   	memberships.active
+  end
+
+  def blue_cars
+  	cars.blue
   end
 end
