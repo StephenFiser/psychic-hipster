@@ -1,1 +1,1 @@
-Creating some examples based on the book "Rails Anitpatterns"
+Creating some examples based on the book "Rails Antipatterns"
