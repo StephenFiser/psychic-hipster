@@ -1,6 +1,10 @@
 class User < ActiveRecord::Base
   has_many :memberships
-  has_many :cars
+  has_many :cars do
+  	def blue
+  		where(color: "Blue")
+  	end
+  end
   attr_accessible :first_name, :last_name
   scope :ordered, order("last_name")
 
