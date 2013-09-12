@@ -9,5 +9,11 @@ class Purchase < ActiveRecord::Base
 			end
 		end
 	end
-	
+
+	STATUSES.each do |status|
+		define_method("#{status}?") do
+			self.status == status
+		end
+	end
+
 end
