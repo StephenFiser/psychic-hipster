@@ -1,15 +1,12 @@
 class Bicycle < ActiveRecord::Base
+  include Drivable
   attr_accessible :direction, :speed
 
-  def turn direction
-  	self.direction = direction
+  def acceleration
+  	1
   end
 
-  def accelerate
-  	self.speed = [speed + 1, 20].min
-  end
-
-  def slow_down
-  	self.speed -= 1
+  def top_speed
+  	20
   end
 end
